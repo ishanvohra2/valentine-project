@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" width="64" height="80">
+  <!-- arm -->
+  <rect x="30" y="0" width="4" height="36" fill="#555" rx="1"/>
+  <!-- claw base -->
+  <rect x="20" y="36" width="24" height="8" fill="#666" rx="2"/>
+  <!-- left pincer -->
+  <path d="M22 44 L14 58 L18 60 L26 46 Z" fill="#777"/>
+  <!-- right pincer -->
+  <path d="M42 44 L50 58 L46 60 L38 46 Z" fill="#777"/>
+  <!-- center pincer -->
+  <path d="M30 44 L32 56 L34 44 Z" fill="#777"/>
+</svg>
