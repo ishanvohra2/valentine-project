@@ -1,23 +1,23 @@
 <script>
+	// Valentine Week 2025: each day unlocks at 00:00 on its date (Feb = month 1)
 	const days = [
-		{ name: 'Rose Day', path: '/rose-day', emoji: '🌹' },
-		{ name: 'Propose Day', path: '/propose-day', emoji: '💍' },
-		{ name: 'Chocolate Day', path: '/chocolate-day', emoji: '🍫' },
-		{ name: 'Teddy Day', path: '/teddy-day', emoji: '🧸' },
-		{ name: 'Promise Day', path: '/promise-day', emoji: '🤝' },
-		{ name: 'Hug Day', path: '/hug-day', emoji: '🤗' },
-		{ name: 'Kiss Day', path: '/kiss-day', emoji: '💋' },
-		{ name: "Valentine's Day", path: '/valentines-day', emoji: '❤️', valentinesDay: true }
+		{ name: 'Rose Day', path: '/rose-day', emoji: '🌹', date: 7 },
+		{ name: 'Propose Day', path: '/propose-day', emoji: '💍', date: 8 },
+		{ name: 'Chocolate Day', path: '/chocolate-day', emoji: '🍫', date: 9 },
+		{ name: 'Teddy Day', path: '/teddy-day', emoji: '🧸', date: 10 },
+		{ name: 'Promise Day', path: '/promise-day', emoji: '🤝', date: 11 },
+		{ name: 'Hug Day', path: '/hug-day', emoji: '🤗', date: 12 },
+		{ name: 'Kiss Day', path: '/kiss-day', emoji: '💋', date: 13 },
+		{ name: "Valentine's Day", path: '/valentines-day', emoji: '❤️', date: 14 }
 	];
 
-	function isValentinesDayUnlocked() {
+	function isUnlocked(febDate) {
 		const now = new Date();
 		const year = now.getFullYear();
-		const feb14 = new Date(year, 1, 14, 0, 0, 0); // Feb 14 00:00 local
-		return now >= feb14;
+		const unlock = new Date(year, 1, febDate, 0, 0, 0);
+		return now >= unlock;
 	}
 
-	let valentinesEnabled = $derived(isValentinesDayUnlocked());
 </script>
 
 <svelte:head>
@@ -30,11 +30,11 @@
 	<ul class="day-list">
 		{#each days as day}
 			<li>
-				{#if day.valentinesDay && !valentinesEnabled}
-					<span class="day-link disabled" title="Available from Feb 14">
+				{#if !isUnlocked(day.date)}
+					<span class="day-link disabled" title="Available from Feb {day.date}">
 						<span class="emoji">{day.emoji}</span>
 						<span class="name">{day.name}</span>
-						<span class="locked">— Feb 14</span>
+						<span class="locked">— Feb {day.date}</span>
 					</span>
 				{:else}
 					<a href={day.path} class="day-link">
