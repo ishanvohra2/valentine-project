@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { browser } from '$app/environment';
 	import { PUBLIC_PASSWORD } from '$env/static/public';
 
@@ -12,14 +13,14 @@
 		e.preventDefault();
 		if (password === PUBLIC_PASSWORD) {
 			if (browser) sessionStorage.setItem('valentine-auth', '1');
-			goto('/days');
+			goto(`${base}/days`);
 		} else {
 			error = 'Wrong password. Try again.';
 		}
 	}
 
 	onMount(() => {
-		if (sessionStorage.getItem('valentine-auth') === '1') goto('/days');
+		if (sessionStorage.getItem('valentine-auth') === '1') goto(`${base}/days`);
 	});
 </script>
 

@@ -1,4 +1,5 @@
 <script>
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -8,7 +9,7 @@
 <main class="game">
 	<h1>🤝 Promise Day</h1>
 	<p class="promise-text">I promise to be with you forever</p>
-	<a href="/days" class="back">← Return to days</a>
+	<a href={base + '/days'} class="back">← Return to days</a>
 </main>
 
 <style>

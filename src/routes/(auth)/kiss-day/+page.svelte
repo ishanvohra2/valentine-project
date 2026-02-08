@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	let kisses = [];
 	let faceEl;
 
@@ -32,7 +34,7 @@
 		{/each}
 	</div>
 	<p class="count">{kisses.length} kiss{kisses.length === 1 ? '' : 'es'} 💕</p>
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>

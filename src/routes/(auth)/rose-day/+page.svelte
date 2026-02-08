@@ -1,5 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
+	import { base } from '$app/paths';
 
 	let score = 0;
 	let misses = 0;
@@ -101,7 +102,7 @@
 			</div>
 		{/if}
 	</div>
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>

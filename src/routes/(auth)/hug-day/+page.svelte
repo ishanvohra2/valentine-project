@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	let tightness = 0;
 	const maxTightness = 10;
 	function hug() {
@@ -26,7 +28,7 @@
 	{#if tightness >= maxTightness}
 		<p class="done">So much love! 💕</p>
 	{/if}
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>

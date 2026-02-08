@@ -1,5 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
+	import { base } from '$app/paths';
 
 	let clawX = 50;
 	let clawDir = 1;
@@ -67,7 +68,7 @@
 	{#if phase === 'won' && didCaptureTeddy}
 		<p class="result win">You got the teddy! 🧸💕</p>
 	{:else if phase === 'lost'}
-		<p class="result lose">Missed! <a href="/teddy-day">Try again</a></p>
+		<p class="result lose">Missed! <a href={base + '/teddy-day'}>Try again</a></p>
 	{:else if phase === 'idle'}
 		<div class="controls">
 			<button type="button" class="drop" onclick={drop}>Drop claw</button>
@@ -92,7 +93,7 @@
 		</div>
 		<div class="machine-glass"></div>
 	</div>
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>

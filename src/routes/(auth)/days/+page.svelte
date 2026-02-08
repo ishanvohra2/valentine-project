@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	// Valentine Week 2025: each day unlocks at 00:00 on its date (Feb = month 1)
 	const days = [
 		{ name: 'Rose Day', path: '/rose-day', emoji: '🌹', date: 7 },
@@ -31,13 +33,13 @@
 		{#each days as day}
 			<li>
 				{#if !isUnlocked(day.date)}
-					<span class="day-link disabled" title="Available from Feb {day.date}">
+					<span class="day-link disabled" title="Available from Feb {day.date}" role="link" aria-disabled="true">
 						<span class="emoji">{day.emoji}</span>
 						<span class="name">{day.name}</span>
 						<span class="locked">— Feb {day.date}</span>
 					</span>
 				{:else}
-					<a href={day.path} class="day-link">
+					<a href={base + day.path} class="day-link">
 						<span class="emoji">{day.emoji}</span>
 						<span class="name">{day.name}</span>
 					</a>

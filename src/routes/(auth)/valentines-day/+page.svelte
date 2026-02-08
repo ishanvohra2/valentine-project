@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	let revealed = false;
 
 	function isValentinesDayUnlocked() {
@@ -18,7 +20,7 @@
 	<h1>❤️ Valentine's Day</h1>
 	{#if !unlocked}
 		<p class="instruction">This page is available from Feb 14.</p>
-		<a href="/days" class="back">← Back to days</a>
+		<a href={base + '/days'} class="back">← Back to days</a>
 	{:else if !revealed}
 		<p class="instruction">Open your heart to see the message.</p>
 		<button class="open" onclick={() => (revealed = true)}>💝 Open</button>
@@ -27,7 +29,7 @@
 		<p class="message">I love you! Happy Valentine's Day! 💕</p>
 	{/if}
 	{#if unlocked}
-		<a href="/days" class="back">← Back to days</a>
+		<a href={base + '/days'} class="back">← Back to days</a>
 	{/if}
 </main>
 

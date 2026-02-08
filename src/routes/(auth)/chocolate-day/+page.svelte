@@ -1,4 +1,6 @@
 <script>
+	import { base } from '$app/paths';
+
 	const emojis = ['🍫', '🍬', '🍩', '🎂', '🍪', '🧁', '🍭', '🎀', '💝', '🫐', '🍓', '🍒'];
 	let cards = [...emojis, ...emojis]
 		.map((e, i) => ({ id: i, emoji: e, flipped: false, matched: false }))
@@ -60,7 +62,7 @@
 	{#if cards.every((c) => c.matched)}
 		<p class="done">All pairs matched! 🍫💕</p>
 	{/if}
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>

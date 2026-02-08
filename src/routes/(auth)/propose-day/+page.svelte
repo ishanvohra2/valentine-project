@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
 
 	let answered = $state(false);
 	let noClicks = $state(0);
@@ -75,7 +76,7 @@
 	{:else}
 		<p class="result yes">I knew it! Love you! ❤️</p>
 	{/if}
-	<a href="/days" class="back">← Back to days</a>
+	<a href={base + '/days'} class="back">← Back to days</a>
 </main>
 
 <style>
