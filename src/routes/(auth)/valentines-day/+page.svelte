@@ -23,7 +23,7 @@
 		<p class="instruction">Open your heart to see the message.</p>
 		<button class="open" onclick={() => (revealed = true)}>💝 Open</button>
 	{:else}
-		<img src="/couple.HEIC" alt="Us" class="couple-img" />
+		<img src="/couple.jpg" alt="Us" class="couple-img" />
 		<p class="message">I love you! Happy Valentine's Day! 💕</p>
 	{/if}
 	{#if unlocked}
