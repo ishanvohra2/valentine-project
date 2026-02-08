@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BASE_PATH: /${{ github.event.repository.name }}
+      PUBLIC_PASSWORD: ${{ secrets.PUBLIC_PASSWORD }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
