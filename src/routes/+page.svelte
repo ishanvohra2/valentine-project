@@ -40,6 +40,7 @@
 		{/if}
 		<button type="submit">Enter</button>
 	</form>
+	<p class="hint">Hint: It's the day you became mine forever</p>
 </main>
 
 <style>
@@ -99,5 +100,13 @@
 	}
 	button:hover {
 		background: #ff1493;
+	}
+	.hint {
+		margin-top: 1.5rem;
+		font-size: 0.9rem;
+		color: #8b0045;
+		opacity: 0.85;
+		text-align: center;
+		max-width: 280px;
 	}
 </style>
